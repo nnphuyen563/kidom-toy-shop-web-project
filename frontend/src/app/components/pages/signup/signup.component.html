@@ -1,0 +1,79 @@
+<body>
+    <div class="background">
+    <!-- Main Container -->
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+    <!-- Login Container -->
+        <div class="row border rounded-4 p-3 bg-white shadow box-area">
+
+    <!-- left-box -->
+        <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background-color: white;">
+            <div class="featured-image mb-3">
+                <img src="../assets/img/banner/loginbanner.png" class="img-fluid" style="width: 100%; border-radius: 5%;">
+            </div>
+        </div>
+
+    <!-- right-box -->
+        <div class="col-md-6 right-box d-flex justify-content-center">
+            <div class="row align-items-center">
+                <app-title title="Đăng ký"></app-title>
+                <form [formGroup]="SignupForm" (ngSubmit)="submit()">
+                    <div class="header-text mb-1">
+                        <p> Chào mừng ba mẹ,
+                            <b> Kidom </b> chúc ba mẹ có một trải nghiệm mua sắm tuyệt vời!
+                        </p>
+                    </div>
+                    <!-- Nhập họ và tên -->
+                    <div class="input-group mb-2" >
+                        <input id="name" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Họ và tên" formControlName="name">
+                    </div>
+                    <div class="error-list mb-2" *ngIf="fc['name'].errors && isSubmitted">
+                        <div class="errorlogin" *ngIf="fc['name'].errors?.['required']">Không được để trống</div>
+                    </div>
+
+                    <!-- Nhập Email -->
+                    <div class="input-group mb-2">
+                        <input id="email" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Email" formControlName="email">
+                    </div>
+                    <div class="error-list mb-2" *ngIf="fc['email'].errors && isSubmitted">
+                        <div class="errorlogin" *ngIf="fc['email'].errors?.['required']">Không được để trống</div>
+                        <div class="errorlogin" *ngIf="fc['email'].errors?.['email']">Email không đúng định dạng</div>
+                    </div>
+
+                    <!-- Nhập Số điện thoại-->
+                    <div class="input-group mb-2" >
+                        <input id="phonenumber" type="text" class="form-control form-control-lg bg-light fs-6" placeholder="Số điện thoại" formControlName="phonenumber">
+                    </div>
+                    <div class="error-list mb-2" *ngIf="fc['phonenumber'].errors && isSubmitted">
+                        <div class="errorlogin" *ngIf="fc['phonenumber'].errors?.['required']">Không được để trống</div>
+
+                    </div>
+
+                    <!-- Nhập mật khẩu -->
+                    <div class="input-group mb-2" >
+                        <input id="password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Mật khẩu" formControlName="password">
+                    </div>
+                    <div class="error-list mb-2" *ngIf="fc['password'].errors && isSubmitted">
+                        <div class="errorlogin" *ngIf="fc['password'].errors?.['required']">Không được để trống</div>
+
+                    </div>
+                    <!-- Nhập lại mật khẩu -->
+                    <div class="input-group mb-2" >
+                        <input id="confirmPassword" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Nhập lại mật khẩu" formControlName="confirmPassword">
+                    </div>
+                    <div class="error-list mb-2" *ngIf="fc['confirmPassword'].errors && isSubmitted">
+                        <div class="errorlogin" *ngIf="fc['confirmPassword'].errors?.['required']">Không được để trống</div>
+                        <div class="errorlogin" *ngIf="fc['confirmPassword'].errors?.['notMatch']">Mật khẩu không trùng nhau</div>
+                    </div>
+                    
+                    <!-- Button -->
+                    <div class="input-group mb-2" id="btnsignup">
+                        <button class="btn btn-lg btn-danger w-100 fs-6" type="submit">Đăng ký</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</body>

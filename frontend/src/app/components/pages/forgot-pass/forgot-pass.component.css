@@ -1,0 +1,15 @@
+body {
+    font-family: myFontSub;
+}
+.header-text {
+    font-size: 20px;
+    text-align:center;
+}
+#email {
+    margin-top: -12px;
+}
+.background {
+    background-image: url(/assets/img/login/background.jpeg);
+    background-size: cover;
+    background-position: center;
+}

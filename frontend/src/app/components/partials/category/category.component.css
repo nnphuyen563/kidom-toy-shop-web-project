@@ -1,0 +1,67 @@
+.cart-btn {
+    background-color: #F52A41;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+    padding: 12px 34px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    display: inline-block;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+body {
+    font-family: myFontSub;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: myFontSub;
+}
+.ml {
+  margin-left: auto;
+  margin-right: 10px;
+}
+.texttieude {
+  color: white;
+}
+.thanhtieude {
+    width: 60%;   
+
+}
+.tieude {
+    color: white;
+}
+
+.texttieude {
+    color: white;
+    font-size: 28px;
+}
+@media (max-width: 992px) {
+  .texttieude {
+      font-size: 14px;
+      margin-top: 5px;
+}
+}
+@media (max-width: 1200px) {
+  .cart-btn {
+      font-size: 14px;
+      padding: 12px 12px;
+}
+}
+
+@media (max-width: 992px) {
+  .cart-btn {
+      font-size: 10px;
+      padding: 12px 12px;
+}
+}
+
+@media (max-width: 430px) {
+  .cart-btn {
+      font-size: 10px;
+      padding: 12px 8px;
+}
+}
+

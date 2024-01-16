@@ -1,0 +1,88 @@
+<header>
+    <section class="top-section"> 
+        <div class="container top-container">
+            <div class="top-navbar row pt-4">
+                <div class="col-md-2 col-sm-12 col-12">
+                    <button class="navbar-toggler shadow-none border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a routerLink="/" class="logo d-flex justify-content-center">
+                        <img src="assets/img/logo/logo-red.png" class="img-fluid" alt="logo">
+                    </a>
+                </div>
+                <div class="col-md-1"></div>
+                <div class="col-md-5 col-sm-12 col-12">
+                        <div class="search">
+                            <app-search></app-search>
+                        </div>
+                </div>
+                <div class="col-md-4 col-sm-12 col-12 mb-2">
+                    <ul class="nav justify-content-center nav-outer mt-2"> 
+                        <li class="nav-item me-3"> 
+                            <a routerLink="/cart" >
+                                <i class="fa-solid fa-shopping-cart"></i> Giỏ hàng
+                            </a>
+                        </li> 
+                        <li class="nav-item me-3">
+                            <a routerLink="/account">
+                                <i class="fa-solid fa-user" *ngIf="isAuth"></i> 
+                                {{user.name}}
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="!isAuth">
+                            <a routerLink="/login">
+                                <i class="fa-regular fa-circle-user" ></i> 
+                                Đăng nhập /
+                            </a>
+                        </li>
+                        <li class="nav-item" *ngIf="!isAuth">
+                            <a routerLink="/signup">
+                                Đăng ký
+                            </a>
+                        </li>
+                        <li class="nav-item me-3" *ngIf="isAuth" (click)="logout()">
+                            <a routerLink="/">
+                                <i class="fa-solid fa-right-from-bracket"></i>
+                                Đăng xuất
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="bottom-navbar navbar-expand-lg fixed-top" style="z-index: 999;">
+        <div class="container">
+            <div class="offcanvas offcanvas-start text-bg-dark row" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                <!--Navbar header-->
+                <div class="offcanvas-header text-white border-bottom">
+                    <h5 class="offcanvas-title ps-3" id="offcanvasDarkNavbarLabel">Kidom</h5>
+                    <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <!--navbar body-->
+                <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-9">
+                    <ul class="navbar-nav justify-content-center fs-5 flex-grow-1 pe-3">
+                        <li class="nav-item mx-3">
+                            <a class="designbyu" routerLink="/design-by-you" target="_blank" >
+                                <img src="assets/img/logo/design-by-you.png"/>
+                             </a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a routerLink="/" class="nav-link active" aria-current="page">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown mx-3">
+                            <a routerLink="/product" class="nav-link">Sản phẩm</a>
+                        </li>
+                        <li class="nav-item mx-3">
+                            <a routerLink="aboutus" class="nav-link">Về Kidom</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a routerLink="/blog" class="nav-link">Blog</a>
+                        </li>
+                    </ul>   
+                </div>   
+            </div>
+        </div>     
+    </nav>
+</header>

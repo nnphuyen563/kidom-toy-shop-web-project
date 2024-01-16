@@ -1,0 +1,31 @@
+body {
+    font-family: myFontSub;
+}
+.box-area {
+    width: 930px;
+    height: auto;
+}
+.header-text {
+    font-size: 20px;
+    text-align:left;
+}
+/* #email {
+    margin-top: -20px;
+} */
+.background {
+    background-image: url(/assets/img/login/background.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+#luudangnhap {
+    margin-top: 10px;
+}
+#btnlogin button{
+    background-color: #086A39;
+}
+#btnsignup button{
+    background-color: #F52A41;
+}
+.errorlogin {
+    color: #F52A41;
+}

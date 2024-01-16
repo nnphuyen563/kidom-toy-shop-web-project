@@ -1,0 +1,31 @@
+div {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    border-radius: 10rem 0 0 10rem;
+    border: none;
+    height: 2.5rem;
+    width: 25rem;
+    background-color: #fff;
+    padding: 1.2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    outline: none;
+}
+
+div button {
+    color: grey;
+    height: 2.5rem;
+    width: 3rem;
+    font-size: 1rem;
+    border-radius: 0 10rem 10rem 0;
+    border: none;
+    background-color: #F52A41;
+    color: #fff;
+    /* opacity: 0.8; */
+    outline: none;
+}

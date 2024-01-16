@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1441px" height="473px" viewBox="0 0 1441 473" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Footer@3x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Footer" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BG">
+            <g>
+                <path d="M0,30.234375 C479.681415,102.511628 959.681415,92.5116283 1440,0.234375 C1440.46094,1.6953125 1440,472 1440,472 C1440,472 960,472 0,472 L0,30.234375 Z" id="Rectangle" fill="#8DC8E8"></path>
+                <path d="M0,30.234375 C480.068287,105.4375 960.068287,105.4375 1440,30.234375 C1440.46094,31.6953125 1440,472.289062 1440,472.289062 C1440,472.289062 960,472.289062 0,472.289062 L0,30.234375 Z" id="Rectangle" fill="#0D5D9C"></path>
+            </g>
+        </g>
+    </g>
+</svg>

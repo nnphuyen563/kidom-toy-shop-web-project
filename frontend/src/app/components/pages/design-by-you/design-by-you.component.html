@@ -1,0 +1,154 @@
+<body>
+    <div class = "above">
+        <div class="container pt-2">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <a href = "#">
+                        <img class="logo1" src = "assets/img/logo/logo-red.png" alt = "Brand Logo">
+                    </a>
+                    <a href = "#">
+                        <img class="logo1" src = "assets/img/logo/design-by-you.png" alt = "Design by you">
+                    </a>
+                </div>
+                <div class="col-6 cartlogo">
+                    <a routerLink="/cart" class="cartlogo">
+                        <i class="fa-solid fa-shopping-cart"></i>Giỏ hàng
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!---main-->
+        <div class="fluid-container">
+            <div class = "row row-eq-height">
+                <!--Demo product customized-->
+                <div class = "col-md-5"> 
+                    <div class="card" style="width: 100%;">
+                        <div draggable="true" id="userText"></div>
+                        <img [src]="image" class="card-img-top" alt="Teddy Bear" id = "product-img-main">
+                        <div class="card-body">
+                            <h1 class="card-title text-center">{{ nameBear }}</h1>
+                            <p class="card-text" id = "image-note"><i>*Hình ảnh chỉ mang tính chất minh họa</i></p>
+                        </div>
+                        <div class = "mockup">
+                            
+                        </div>
+                    </div>
+                </div>
+        
+                <div class = "col-md-7"> 
+                    <div class="card" style="width: 100%;">
+                        <div class="card-body">
+                            <h1 class="card-title">Gấu bông - Người bạn nhỏ diệu kỳ của bé</h1>
+                            <p class="card-text">Ba mẹ hãy cùng bé tạo nên những ký ức tuyệt vời cùng người bạn đồng hành này nhé. </p>
+                            <h1 class = "product-price">450.000VNĐ</h1>
+                            <!--Chọn gấu bông-->
+                            <h3 class = "cate-title">Hãy chọn một người bạn nhỏ</h3>
+                            <div class = "animals-choice">
+                                <div class = "item">
+                                    <img src = "assets/img/animals/teddy-bear.png" alt = "Teddy Bear" class = "bear-list" (click) = "teddy()">
+                                </div>
+                                <div class = "item">
+                                    <img src = "assets/img/animals/rabbit.png" alt = "Pink Rabbit" class = "bear-list" (click) = "rabbit()">
+                                </div>
+                                <div class = "item">
+                                    <img src = "assets/img/animals/monkey.png" alt = "Brown Monkey" class = "bear-list" (click) = "monkey()">
+                                </div>
+                            </div>
+                            <!--Chọn phụ kiện-->
+                            <h3 class = "cate-title">Hãy chọn một phụ kiện</h3>
+                            <p class = "acc-note">Ba mẹ có thể tùy chỉnh vị trí của phụ kiến theo ý thích</p>
+                            <div class = "accessory-choice" (click)="onLoadfunc()">
+                                <div class = "item">
+                                    <img src = "assets/img/accessory/chef-hat.png" alt = "Chef" class = "accessory">
+                                </div>
+                                <div class = "item">
+                                    <img src = "assets/img/accessory/crown.png" alt = "Crown" class = "accessory" >
+                                </div>
+                                <div class = "item">
+                                    <img src = "assets/img/accessory/graduate-hat.png" alt = "Graduate" class = "accessory" >
+                                </div>
+                                <div class = "item">
+                                    <img src = "assets/img/accessory/magical-hat.png" alt = "Magician" class = "accessory" >
+                                </div>
+                                <div class = "item">
+                                    <img src = "assets/img/accessory/prohibition.png" alt = "Prohibition" (click)="onBtnClick()">
+                                </div>
+                            </div>
+                            <!--Nhập tên-->
+                            <div class = "type-name">
+                                <h3 class = "cate-title">Hãy nhập tên của bé</h3>
+                                <input type = "text"  id="userName" class = "form-control" placeholder="Tên của bé" (change)="changeName()"/>
+                            </div>
+                            <!--Nhập số lượng-->
+                            <div class="qty mt-5">
+                                <h3 class="cate-title">Hãy chọn số lượng</h3>
+                                <span class="minus" (click)="decrease()">-</span>
+                                <input type="number" class="count" name="qty" [(ngModel)]="quantity" (change)="handleChange($event)" />
+                                <span class="plus" (click)="increase()">+</span>
+                            </div>
+                            
+                            <!--Note-->
+                            <div class = "note">
+                                <p><i>
+                                    Sản phẩm được thiết kế riêng bởi ba mẹ và không có sẵn trong kho hàng của Kidom. Do đó, thời gian chuân bị và vận chuyển sẽ kéo dài hơn so với sản phẩm bình thường. Hãy theo dõi tình trạng đơn hàng trong Trang cá nhân của ba mẹ. Kidom xin cảm ơn!
+                                </i></p>
+                            </div>
+                            <!--Mua hàng-->
+                            <div>
+                                <ng-template #content let-c="close" let-d="dismiss">
+                                    <div class="modal-body">
+                                        <p>Chúc mừng ba mẹ đã đặt hàng thành công!</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn" (click)="c('Save click')">Đóng</button>
+                                    </div>
+                                </ng-template>
+                            </div>
+                            <button class = "btn-sale" (click)="order(content)">Đặt hàng
+                                <div class="star-1">
+                                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                                </div>
+                                <div class="star-2">
+                                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                                </div>
+                                <div class="star-3">
+                                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                                </div>
+                                <div class="star-4">
+                                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                                </div>
+                                <div class="star-5">
+                                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                                </div>
+                                <div class="star-6">
+                                  <svg xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 784.11 815.53" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs></defs><g id="Layer_x0020_1"><metadata id="CorelCorpID_0Corel-Layer"></metadata><path d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z" class="fil0"></path></g></svg>
+                                </div>
+                            </button>             
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class = "effect">
+        <div class="wrapper">
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+            <div><span class="dot"></span></div>
+          </div>
+    </div>
+    </body>
+<app-footer></app-footer>

@@ -1,0 +1,129 @@
+body {
+    font-family: myFontSub !important; 
+}
+.add-to-cart{
+    background-color: #328320;
+    color: #ffffff;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+    transition: background-color 0.3s, color 0.3s;
+}
+.add-to-cart:hover{
+    background-color: #F52A41;
+    color: #ffffff;
+    border-radius: 10px;
+}
+/* CSS tùy chỉnh cho button "Mua ngay" */
+.buy-now {
+    background-color: #0D5D9C;
+    color: #ffffff;
+    border-radius: 10px;
+    height: 50px;
+    width: 100%;
+}
+/*chỉnh chọn số lượng*/
+.pro-qty {
+    display: flex;
+    align-items: center;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.pro-qty span {
+    padding: 5px 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 20px;
+    margin: auto;
+}
+
+.pro-qty input {
+    border: none;
+    text-align: center;
+    width: 40px;
+    height: 100%;
+}
+.title {
+    font-size: 30px !important;
+    font-weight: bold;
+    color: #407EC9;
+    font-family: myFontSub;
+}
+.price {
+    font-size: 25px;
+    color: #F52A41;
+    font-weight: bold;
+} 
+
+
+.p-galleria-thumbnail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* Đảm bảo chiều cao của thumbnail là 100% */
+}
+.product-img img {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 10px;
+}
+/* Chọn nội dung của tab "Mô tả sản phẩm" */
+.product-details-tab-desc, .tab-pane {
+    /* Màu chữ trong nội dung tab */
+    color: #333;
+    /* Màu nền của nội dung tab */
+    background-color: #f8f8f8;
+    /* Thêm padding và margin để định dạng nội dung */
+    padding: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd; /* Bổ sung đường viền nếu cần thiết */
+    border-radius: 10px;
+}
+/*----------------------------------*/
+.user-review img{
+    width: 60px;
+    padding-right: 15px;
+}
+.user-review-text p{
+    padding-left: 65px;
+}
+
+/*-----------------------*/
+/*sản phẩm liên quan*/
+
+.relative-product {
+    font-weight: bold;
+    text-align: center;
+    font-size: 20px;
+    color: #0D5D9C;
+}
+
+/* Thêm hiệu ứng transition cho ảnh */
+.card {
+    transition: transform 0.3s ease-in-out;
+}
+    
+/* Áp dụng hiệu ứng zoom khi di chuột qua ảnh */
+.card:hover {
+    transform: scale(1.05);
+}
+    
+
+.btn-heart {
+    color: #000; /* Default color for the heart icon */
+    transition: color 0.3s; /* Smooth transition for color change */
+  }
+  
+.clicked {
+    color: red; /* Color when the button is clicked */
+}
+
+@media (max-width: 992px) {
+    .btntext {
+        font-size: 14px;
+        padding: 6px 6px;
+}
+}

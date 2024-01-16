@@ -1,0 +1,314 @@
+.center {
+    text-align: center;
+}
+
+* {
+    font-family: Inter, sans-serif;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    background-color: #F8F9FA;
+}
+
+section {
+    padding: 5rem 10%;
+}
+
+.body {
+    background-color: var(--white);
+    margin: 17px 10%;
+    padding: 16px;
+    min-height: 582px;
+    font-family: "Poppins";
+}
+
+.body h1 {
+    font-size: 30px;
+    color: var(--fontColor);
+    text-transform: uppercase;
+}
+
+.body h2 {
+    font-size: 25px;
+    color: rgb(248, 5, 5);
+    text-transform: uppercase;
+}
+
+.body h3 {
+    font-size: 20px;
+    color: black;
+}
+
+.body p {
+    font-size: 15px;
+    color: var(--fontColor);
+}
+
+.body .service-list {
+    margin-top: 31px;
+}
+
+.body .service-list div {
+    padding: 20px;
+    border-top: 1px solid var(--line-color);
+}
+
+.body .service-list div a {
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--blue);
+    text-transform: uppercase;
+}
+
+.body .service-list div a:hover {
+    text-decoration: underline;
+}
+
+.body .service-list .last-service {
+    border-bottom: 1px solid var(--line-color);
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    margin: auto;
+}
+
+/* media queries */
+
+@media (max-width: 1200px) {
+    section {
+        padding: 3rem 5%;
+    }
+}
+
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    section {
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    #menu-btn {
+        display: inline-block;
+        transition: .2s linear;
+    }
+
+    #menu-btn.fa-times {
+        transform: rotate(180deg);
+    }
+
+    .header .navbar {
+        position: absolute;
+        top: 99%;
+        left: 0;
+        right: 0;
+        background-color: var(--white);
+        border-top: var(--border);
+        padding: 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: .2s linear;
+    }
+
+    .header .navbar.active {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .header .navbar a {
+        display: block;
+        margin: 2rem;
+        text-align: center;
+        font-size: 50%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+#section0, #section1, #section2, #section3, #section4, #section5, #section6{
+    /*border-radius: 10px; /* This removes the rounded corners */
+    /*border: 2px solid rgba(211, 90, 138, 0.018);*/
+    padding: 1%;
+    margin: 1%;
+    /*background-color: rgba(237, 233, 130, 0.653);  */
+}
+
+#section0 h3, #section1 h3, #section2 h3, #section3 h3, #section4 h3, #section5 h3, #section6 h3 {
+    text-align: left;
+}
+
+#section1 .wapper{
+    width: 100%;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: azure;
+}
+#section1 .slide-container{
+    width: 1120px;
+    max-width: 100%;
+    padding: 0px;
+}
+#section1 .slide-content{
+    margin: 0 10px;
+    overflow: hidden;
+    border-radius: 25px;
+}
+#section1 .card{
+    border-radius: 25px;
+    background-color: #fff; 
+}
+#section1 .image-content,.card-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 14px;
+}
+#section1 .image-content{
+    position: relative;
+    row-gap: 5px;
+}
+#section1 .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #4070f4;
+    left: 0;
+    top: 0;
+    border-radius: 25px 25px 0 25px;
+}
+#section1 .overlay::before,
+#section1 .overlay::after{
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    right: 0;
+    bottom: -40px;
+    background-color: #4070f4;
+}
+#section1 .overlay::after{
+    border-radius: 0 25px 0 0;
+    background-color: #fff;
+
+}
+#section1 .card-image{
+    position: relative;
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    border-radius: 50%;
+    border: solid 2px #fff;
+ }
+ #section1 .card-image .card-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: solid 4px royalblue;
+ }
+ #section1 .card-content .name{
+    font-size: 18px;
+    font-weight: 500;
+    color: slategray;
+}
+#section1 .card-content .description{
+    font-size: 14px;
+    color:#707070;
+    text-align: center;
+}
+#section1 .card-content .button{
+    border: none;
+    font-size: 16px;
+    color: white;
+    padding: 8px 16px;
+    background-color: #4070f4;
+    border-radius: 6px;
+    margin: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#section1 .card-content .button:hover{
+    background: #265DF2;
+}
+
+#section1 .swiper-navBtn{
+    color: #6E93f7!important;
+    transition: color 0.3s ease;
+}
+#section1 .swiper-navBtn:hover{
+    color: #4070f4!important;
+}
+#section1 .swiper-navBtn::before,
+#section1 .swiper-navBtn::after{
+    font-size: 40px!important;
+}
+#section1 .swiper-button-next{
+    right: 0!important;
+}
+#section1 .swiper-button-prev{
+    left: 0!important;
+}
+#section1 .swiper-pagination-bullet{
+    background-color: #6e93f7;
+    opacity: 1;
+}
+#section1 .swiper-pagination-bullet-active{
+    background-color: #4070f4;
+}
+
+#section1 .center{
+    text-align: center;
+} 
+
+@media screen and (max-width:768px) {
+    .slide-content{
+        margin: 0 10px;
+    }
+    .swiper-navBtn{
+        display: none;
+    }
+}
+
+/* Style for FAQ questions */
+.faq-question {
+    cursor: pointer; /* Makes it clear you can click on the question */
+    padding: 10px;
+    margin: 10px 0; /* Add space around the questions */
+    background-color: rgb(246, 240, 125); 
+    color: black; /* White text for better contrast */
+    border: none;
+    text-align: left; /* Aligns the question text to the left */
+    border-radius: 10px; /* Rounded corners */
+}
+  
+  /* Style for FAQ answers */
+.faq-answer {
+    display: none; /* Hide answers by default */
+    padding: 10px;
+    margin-bottom: 10px; /* Add space below the answer */
+    background-color: rgba(237, 233, 130, 0.653); /* Using the sub color variable */
+    color: black; /* White text for better contrast */
+    text-align: left; /* Aligns the answer text to the left */
+    border-radius: 10px; /* Rounded corners */
+}

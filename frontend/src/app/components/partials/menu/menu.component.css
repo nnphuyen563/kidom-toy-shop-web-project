@@ -1,0 +1,20 @@
+.menu {
+    display: flex;
+    flex-direction: row;
+    background-color: #407EC9;
+}
+
+a:hover {
+    background: white;
+    color: black;
+    cursor: pointer;
+}
+
+a {
+    font-size: 20px;
+    color: black;
+    flex-grow: 1;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}

@@ -1,0 +1,75 @@
+<body>
+    <div class="background">
+    <!-- Main Container -->
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+    <!-- Login Container -->
+        <div class="row border rounded-4 p-3 bg-white shadow box-area">
+
+    <!-- left-box -->
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background-color: white;">
+                <div class="featured-image mb-3">
+                    <img src="../assets/img/banner/loginbanner.png" class="img-fluid" style="width: 100%; border-radius: 5%;">
+                </div>
+            </div>
+
+    <!-- right-box -->
+            <div class="col-md-6 right-box d-flex">
+                <div class="row align-items-center">
+                    <app-title title="Đăng nhập"></app-title>
+                    <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                        <div class="header-text mb-1">
+                            <p> Xin chào phụ huynh của bé, 
+                                Kidom rất vui mừng khi gặp lại bạn!
+                            </p>
+                        </div>
+                        <!-- Nhập Email -->
+                        <div class="input-container">
+                            <label for="email">Tài khoản</label>
+                            <div class="input-group mb-1" >
+                                <input id="email" type="email" style="display: block;" class="form-control form-control-lg bg-light fs-6" placeholder="Email" formControlName="email">
+                            </div>
+                            <div class="error-list" *ngIf="fc['email'].errors && isSubmitted">
+                                <div class="errorlogin" *ngIf="fc['email'].errors?.['required']">Không được để trống</div>
+                                <div class="errorlogin" *ngIf="fc['email'].errors?.['email']">Email không đúng định dạng</div>
+
+                            </div>
+                        </div>
+                        <!-- Nhập mật khẩu -->
+                        <div class="input-container">
+                            <label for="password">Mật khẩu</label>
+                            <div class="input-group mb-1">
+                                <input id="password" type="password" class="form-control form-control-lg bg-light fs-6" placeholder="Mật khẩu" formControlName="password">
+                            </div>
+                            <div class="error-list" *ngIf="fc['password'].errors && isSubmitted">
+                                <div class="errorlogin" *ngIf="fc['password'].errors?.['required']">Không được để trống</div>
+
+                            </div>
+                        </div>
+                        <!-- Lưu đăng nhập và quên mật khẩu -->
+                        <div class="input-group mb-3 d-flex justify-content-between" id="luudangnhap">
+                            <div class="form-check">
+                                <label for="form-Check" class="form-check-label text-secondary"><small>Lưu đăng nhập</small></label>
+                                <input type="checkbox" class="form-check-input" id="form-Check">
+                            </div>
+                            <div class="forgot" >
+                                <small><a routerLink="/forget-pass"> Quên mật khẩu</a></small>
+                            </div>
+                        </div>
+                        <!-- Button -->
+                        <div class="input-group mb-3" id="btnlogin">
+                            <button class="btn btn-lg btn-success w-100 fs-6" type="submit"> Đăng nhập</button>
+                        </div>
+                    
+
+                        <div class="input-group mb-3" id="btnsignup">
+                                <button class="btn btn-lg btn-danger w-100 fs-6" routerLink="/signup">Tạo tài khoản mới</button>
+                        </div>
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>

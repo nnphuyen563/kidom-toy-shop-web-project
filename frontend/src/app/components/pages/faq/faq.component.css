@@ -1,0 +1,11 @@
+body {
+    font-family: myFontSub;
+}
+.box-area {
+    width: 930px;
+    height: auto;
+}
+.header-text {
+    font-size: 20px;
+    text-align:left;
+}

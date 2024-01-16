@@ -1,0 +1,141 @@
+body {
+    font-family: myFontSub;
+    margin: 20px;
+}
+* {
+    font-family: myFontSub;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+input[type="text"] {
+    padding: 6px;
+    width: 250px;
+    box-sizing: border-box;
+}
+#searchBar {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button {
+    padding: 8px;
+    cursor: pointer;
+    width: 100px; /* Set the width of the buttons */
+    border-radius: 10px;
+    background-color: #1a51b1;
+    border: 0px;
+    color: white;
+}
+
+.button:hover {
+    background-color: #f2f2f2;
+    color: #1a51b1;
+}
+.button-container button:first-child {
+    margin-right: 10px; /* Adjust this value to add space between buttons */
+}
+/* Adjust modal styles */
+.modal-header {
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #dee2e6;
+    text-align: center;
+    align-items: center;
+  }
+  
+  .modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    
+  }
+  
+  .modal-body {
+    padding: 15px;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  /* Adjust form element styles */
+  form {
+    display: grid;
+    grid-gap: 10px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .new input[type="text"],
+  .new input[type="number"],
+  .new textarea,
+  .new select {
+    width: 100%; /* Set the width equally */
+    height: 40px; /* Set the height equally */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+    .new #id,
+    .new #productName,
+    .new #brand {
+    width: 100%; /* Set the width equally */
+    height: 40px; /* Set the height equally */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    }
+  
+  
+  .btn-outline-dark {
+    color: #343a40;
+    border: 1px solid #343a40;
+    margin-left: 360px; /* Add margin if needed */
+
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #0D5D9C;
+    color: white;
+  }
+  
+  
+  /* Style your form elements as needed */
+  .ng-valid[required], .ng-valid.required  {
+    border-left: 5px solid #42A948; /* green */
+  }
+  
+  .ng-invalid:not(form)  {
+    border-left: 5px solid #a94442; /* red */
+  }
+  .image-cell {
+    width: 50px;
+  }
+  .image-cell-small {
+    width: 50px;
+  }

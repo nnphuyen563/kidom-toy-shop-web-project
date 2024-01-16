@@ -1,0 +1,231 @@
+
+<body>
+    <div class="bg-white"> 
+        <div class="container py-4">
+          <!-- Breadcrumb -->
+            <nav class="d-flex">
+                <div class="mb-0">
+                    <a href="" class="text-black text-decoration-none">Trang chủ</a>
+                    <span class="text-black mx-2"> > </span> <!--margin left and right = 2-->
+                    <a href="" class="text-black text-decoration-none">{{thumbnail.category}}</a>
+                    <span class="text-black mx-2"> > </span>
+                    <a href="" class="text-black text-decoration-none">{{thumbnail.name}}</a>
+                </div>
+            </nav>
+          <!-- Breadcrumb -->
+        </div>
+    </div>
+    <section class="py-2"> <!--padding top and bottom--> 
+        <div class="container">
+            <div class="row gx-5 pb-4">
+                <div class="product-img col-md-6 pe-4">
+                    <p-galleria
+                        [value]="products"
+                        [verticalThumbnailViewPortHeight]="'250px'" 
+                        [showItemNavigators]="true"
+                        [numVisible]="3"
+                        thumbnailsPosition="left"
+                        style="height: 400px;">
+
+                        <ng-template pTemplate="item" let-product>
+                            <img 
+                                [src]="product.imageHTML"
+                                style="height: 450px; display: block;"/>
+                        </ng-template>
+                        <ng-template pTemplate="thumbnail" let-product let-i="index"> 
+                            <div class="grid grid-nogutter  
+                                        justify-content-center pe-4"> 
+                                <img [src]="product.imageHTML" height="70px"/> 
+                            </div> 
+                        </ng-template> 
+                    </p-galleria>
+                </div>
+                
+                <main class="col-md-6"> <!--cột bên phải-->
+                    <div class="ps-md-3" > <!--padding left=3-->
+                        <h3 class="title "> <!--tên sản phẩm-->
+                            {{thumbnail.name}}
+                        </h3>
+                        <div>Mã sản phẩm: 
+                            <b>{{thumbnail.id}}</b>
+                        </div>
+                        <hr/>
+      
+                        <div class="price mb-3"> <!--giá-->
+                            {{thumbnail.price}} VNĐ
+                        </div>
+                    </div>
+      
+                    <div class="row ps-md-3"> <!--chọn số lượng-->
+                        <div class="col-md-4 col-6 mb-3">
+                            <div class="product__details__quantity">
+                                <div class="quantity">
+                                    
+                                    <label class=" d-block">Số lượng</label>
+                                    <div class="pro-qty mt-3">
+                                        
+                                        <span class="minus" (click)="decrease()">-</span>
+                                        <input type="number" class="count" name="qty" [(ngModel)]="quantity" (change)="handleChange($event)" />
+                                        <span class="plus" (click)="increase()">+</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="row mb-3 pt-4">
+                    
+                            <div class="add col-md-6 mb-3">
+                                <button type="button" class="btn add-to-cart" (click)="addToCart(thumbnail)">Thêm vào giỏ hàng</button>
+                            </div>
+                            <div class="buy col-md-6 mb-3">
+                                <button type="button" class="btn buy-now" (click)="buyNow(thumbnail)">Mua ngay</button> -->
+                        <div class="row mb-3">
+                            <div class="col-md-6 mb-3">
+                                <button type="button" class="btn add-to-cart w-100 btntext" (click)="addToCart(thumbnail)">Thêm vào giỏ hàng</button>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <button type="button" class="btn buy-now w-100 btntext" (click)="buyNow(thumbnail)">Mua ngay</button>
+                            </div>
+                        </div>
+                        <div class="row"> 
+                            <div class="col-md-6 mb-3">
+                                <a class="btn btn-light border border-secondary py-2 icon-hover px-3 btn-heart"
+                                   (click)="toggleHeart()" 
+                                   [ngClass]="{'clicked': isClicked}"> 
+                                  <i class="me-1 fa fa-heart fa-lg"></i> Save
+                                </a>
+                              </div>
+                        </div>
+                    </div>
+                    
+                    
+                </main>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container border mb-4">
+            <mat-tab-group mat-align-tabs="center" class="tab-group-custom">
+                <mat-tab label="Mô tả sản phẩm"> 
+                    <!-- <ng-template mat-tab-label>
+                        Mô tả sản phẩm
+                    </ng-template> -->
+                    <div class="product-details-tab-desc pt-4">
+                        {{thumbnail.description}}
+                    </div>
+                </mat-tab>
+                <mat-tab label="Đánh giá">
+                    <!-- <ng-template mat-tab-label>
+                        Đánh giá
+                    </ng-template>  -->
+                    <div class="tab-pane container">
+                            
+                        <div class="user-review pt-4">
+                            <div class="d-flex align-items-center">
+                                <img src="https://thuvienmeme.com/wp-content/uploads/2023/08/meo-do-ngon-tay-ok-khoc.jpg" alt="User Avatar" class="user-avatar">
+                                <div>
+                                    <h5>nnphuyen563</h5>
+                                    <div class="user-rating">
+                                        ★★★★☆ <!-- Số sao đánh giá -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-review-text">
+                                <p>Sản phẩm rất tốt, đúng như mô tả. Giao hàng nhanh chóng, đóng gói cẩn thận. Rất hài lòng!</p>
+                            </div>
+                        </div>
+                        <div class="user-review pt-4">
+                            <div class="d-flex align-items-center">
+                                <img src="https://png.pngtree.com/png-vector/20191027/ourlarge/pngtree-cute-pug-avatar-with-a-yellow-background-png-image_1873432.jpg" alt="User Avatar" class="user-avatar">
+                                <div>
+                                    <h5>tammchannn</h5>
+                                    <div class="user-rating">
+                                        ★★★★★ <!-- Số sao đánh giá -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-review-text">
+                                <p>Rất đáng mua, giá còn rẻ nữa.</p>
+                            </div>
+                        </div>
+                        <div class="user-review pt-4">
+                            <div class="d-flex align-items-center">
+                                <img src="https://beatpet.com/wp-content/uploads/2023/02/avatar-cho-shiba-1.jpg" alt="User Avatar" class="user-avatar">
+                                <div>
+                                    <h5>nana0786</h5>
+                                    <div class="user-rating">
+                                        ★★★★★ <!-- Số sao đánh giá -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="user-review-text">
+                                <p>Sản phẩm rất tuyệt, bé nhà tôi rất thích</p>
+                            </div>
+                        </div>
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </div>
+    </section> 
+
+
+
+
+    <!--những sản phẩm liên quan-->
+    <!-- <section class="bg-light border-top py-4">
+        <div class="container">
+            <div class="row">
+                <h4 class="relative-product py-3">Sản phẩm liên quan</h4>
+                <div class="col-6 col-md-3 " *ngFor="let product of relatedProducts.slice(0,8); index as i">
+                    <a routerLink="/productDetail/{{product.name}}"
+                        [queryParams]="{id: product.id}"
+                         class="text-decoration-none" >
+                        <div class="card mb-3" >
+                            <img [src]="product.imageHTML" class="card-img" alt="" id="hinh{{i + 1}}">
+                            <div class="p-2">
+                                <h6 class="text-black-50 p-2">{{product.category}}</h6>
+                                <h5 class="card-title text-center mt-2">{{product.name}}</h5>
+                                <h6 class="card-text text-center price mb-1">{{product.price}} VND</h6>
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <div class="stars mr-auto align-items-center">
+                                        <app-star-rating [stars]="product.star" />
+                                    </div>
+                                    <div class="mt-2 ml">
+                                        <span class="card-title"> Có sẵn: {{product.stock}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="bg-light border-top py-4">
+        <div class="container">
+            <div class="row">
+                <h4 class="relative-product py-3">Sản phẩm liên quan</h4>
+                <div class="col-6 col-md-3" *ngFor="let product of productsRelated.slice(0,8); index as i">
+                    <a routerLink="/productDetail/{{product.name}}" [queryParams]="{id: product.id}" class="text-decoration-none">
+                        <div class="card mb-3">
+                            <img [src]="product.imageHTML" class="card-img" alt="" id="hinh{{i + 1}}">
+                            <div class="p-2">
+                                <h6 class="text-black-50 p-2">{{product.category}}</h6>
+                                <h5 class="card-title text-center mt-2">{{product.name}}</h5>
+                                <h6 class="card-text text-center price mb-1">{{product.price}} VND</h6>
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <div class="stars mr-auto align-items-center">
+                                        <app-star-rating [stars]="product.star" />
+                                    </div>
+                                    <div class="mt-2 ml">
+                                        <span class="card-title"> Có sẵn: {{product.stock}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+</body>

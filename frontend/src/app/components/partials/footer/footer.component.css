@@ -1,0 +1,62 @@
+body {
+    text-decoration: none !important;
+    color: #ffffff !important;
+    font-family: myFontSub !important;
+    font-size: 14px;
+    background-color: #0D5D9C;
+}
+/*     Cột 1     */
+.img-container img {
+    width: 70%;
+}
+
+
+/*     Cột 2     */
+.right-column h5{
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.container h5, ul {
+    color: #ffffff !important;
+}
+/*     3 ảnh social     */
+.right-column .social img { 
+    width: 30%;
+}
+.subscribe {
+    background-color: #F52A41 !important;
+    color: #ffffff !important;
+    border-radius: 15px !important;
+    width: 100%;
+}
+.container a{
+    text-decoration: none;
+}
+.checkbox-container {
+    display: flex; /*tạo 1 container flex, căn chỉnh theo chiều ngang*/
+    align-items: center; /* Canh giữa theo chiều dọc */
+  }
+
+.checkbox-container input[type="checkbox"] {
+    margin-right: 10px; /* Khoảng cách giữa checkbox và label */
+    transform: scale(1.5); /* Thay đổi kích thước của checkbox */
+}
+.checkbox-container label{
+    font-size: 13px;
+}
+.front ul{
+    font-size: 13px;
+}
+.list-unstyled li {
+    margin-bottom: 10px; /* chỉnh khoảng cách giữa các thẻ li */
+}
+
+.form-control {
+    border-radius: 15px !important;
+}
+@media (max-width: 999px) {
+    .right-column {
+        margin-bottom: 30px;
+    }
+}

@@ -1,0 +1,128 @@
+
+<h2>Giỏ hàng</h2>
+<div class="container">
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Hình ảnh</th>
+        <th>Tên sản phẩm</th>
+        <th>Số lượng</th>
+        <th>Giá</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of cartItems" class="cart-item">
+        <td>
+          <img
+            src="{{ item.imageHTML }}"
+            alt=""
+            style="height: 100px; width: 100px"
+          />
+        </td>
+        <td>{{ item.name }}</td>
+        <td>
+          <input
+            type="number"
+            min="1"
+            [(ngModel)]="item.quantity"
+            (change)="updateQuantity(item)"
+            style="max-width: 50px"
+          />
+        </td>
+        <td>{{ item.price * item.quantity | number : "1.0-0" }} ₫</td>
+        <td>
+          <button class="remove-btn" (click)="removeFromCart(item)">Xóa</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="cart-total" style="border-radius: 10px">
+    Tổng giá trị: {{ total | number : "1.0-0" }} ₫
+  </div>
+  <button class="clear-cart-btn" (click)="clearCart()">Xoá Giỏ hàng</button>
+
+  <div class="user-info">
+    <h3>Thông tin người dùng</h3>
+    <form>
+      <div class="form-group">
+        <label for="name">Họ và tên:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          [(ngModel)]="guestName"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          [(ngModel)]="guestEmail"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label for="address">Địa chỉ:</label>
+        <textarea
+          id="address"
+          name="address"
+          rows="3"
+          [(ngModel)]="guestAddress"
+          required
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <label for="phone">Số điện thoại:</label>
+        <input
+          type="tel"
+          id="phone"
+          name="phone"
+          [(ngModel)]="guestPhone"
+          required
+        />
+      </div>
+    </form>
+  </div>
+
+  <div class="payment-method">
+    <h3>Phương thức thanh toán</h3>
+    <form>
+      <label>
+        <input
+          type="radio"
+          name="paymentMethod"
+          [(ngModel)]="selectedPaymentMethod"
+          value="tiền mặt"
+          required
+        />
+        Thanh toán khi nhận hàng
+      </label>
+      <label>
+        <input
+          type="radio"
+          name="paymentMethod"
+          [(ngModel)]="selectedPaymentMethod"
+          value="thẻ tín dụng"
+          required
+        />
+        Thẻ tín dụng
+      </label>
+      <div *ngIf="selectedPaymentMethod == 'thẻ tín dụng'">
+
+      </div>
+    </form>
+  </div>
+
+  <div class="cart-total" style="border-radius: 10px">
+    Tổng thanh toán: {{ (total) | number : "1.0-0" }} ₫
+  </div>
+
+  <div *ngIf="CartNotEmpty()" style="margin-left: auto">
+    <button class="checkout-btn" (click)="checkout()">Thanh toán</button>
+  </div>
+</div>
+

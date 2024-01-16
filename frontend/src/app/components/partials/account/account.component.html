@@ -1,0 +1,46 @@
+<body> 
+    <div class="container top-container">
+        <div class="top-navbar row pt-4">
+            <div class="col-md-2 col-sm-12 col-12">
+                <div class="navbar">
+                    <button class="navbar-toggler shadow-none border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+                <a routerLink="/" class="logo d-flex justify-content-center">
+                    <img src="assets/img/logo/logo-red.png" class="img-fluid" alt="logo">
+                </a>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5 col-sm-12 col-12">
+                    <div class="search">
+                        <app-search></app-search>
+                    </div>
+            </div>
+            <div class="col-md-4 col-sm-12 col-12 mb-2">
+                <ul class="nav justify-content-center nav-outer mt-2"> 
+                    <li class="nav-item me-3">
+                        <a routerLink="/account">
+                            <i class="fa-solid fa-phone"></i> Tư vấn
+                        </a>
+                    </li>
+                    <li class="nav-item me-3"> 
+                        <a routerLink="/cart" >
+                            <i class="fa-solid fa-shopping-cart"></i> Giỏ hàng
+                        </a>
+                    </li>   
+                    <li class="nav-item">
+                        <a routerLink="/login">
+                            <i class="fa-regular fa-circle-user"></i> Đăng nhập /
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a routerLink="/signup">
+                            Đăng ký
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>

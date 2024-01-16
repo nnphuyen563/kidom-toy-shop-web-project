@@ -1,0 +1,95 @@
+header {
+    position: relative;
+    padding: 0;
+    font-family: myFontSub;
+}
+/*Top navbar*/
+.top-section {
+    background-color: #0D5D9C;
+    font-size: 16px;
+}
+.nav-item i {
+    font-size: 1rem;
+    margin-right: 4px;
+}
+.nav-item a {
+    text-decoration: none;
+    color: #fff;
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo img {
+    width: 180px;
+    margin-top: -10px;
+}
+/*căn phải ul giỏ hàng, đăng nhập*/
+.nav-outer {
+    margin-left: auto;
+}
+
+/*chiều rộng khoảng chứa dropdown*/
+.dropdown-menu a{
+    width: 100%;
+    min-width: 8rem;
+}
+
+/*bottom navbar*/
+.bottom-navbar {
+    background-color: #407EC9;
+    position: relative;
+    z-index: 1000; /* Giữ giá trị này để đảm bảo nằm trên cùng */
+    height: 50px;
+    font-weight: bold;
+    display: flex; /*điều chỉnh chữ nằm giữa thanh điều hướng*/
+    align-items: center!important;
+}
+.bottom-navbar .nav-link {
+    font-size: 16px;
+}
+.designbyu img{
+    height: 50px;
+}
+.offcanvas-title {
+    font-family: myFontSub;
+    font-size: 16px;
+}
+/*khi trỏ chuột vào menu, background chuyển thành trắng và chữ chuyển thành xanh*/
+.navbar-nav li:hover a {
+    background-color: whitesmoke;
+    color: #407EC9;
+    cursor: pointer;
+}
+
+.dropdown-menu{
+    position: absolute;
+    z-index: 1;
+    background: whitesmoke;
+    display: none;
+}
+.navbar-nav .dropdown:hover .dropdown-menu {
+    display: block;
+    column-count: 2; /* Thiết lập số cột trong dropdown */
+    column-gap: 1rem; /* Khoảng cách giữa các cột */
+}
+/*chỉnh menu vào giữa*/
+.navbar-nav, .navbar-nav a { 
+    margin: auto;
+    display: flex;
+    align-items: center;
+    color:#ffffff;
+}
+
+@media only screen and (max-width: 999px){
+    .bottom-navbar {
+        height: 0;
+    }
+    .logo img {
+        align-items: center;
+
+    }
+    .nav-item a, .nav-item i {
+        text-align: center;
+    }
+}

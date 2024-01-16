@@ -1,0 +1,55 @@
+body {
+    font-family: myFontSub;
+    margin: 20px;
+}
+* {
+    font-family: myFontSub;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+input[type="text"] {
+    padding: 6px;
+    width: 250px;
+    box-sizing: border-box;
+}
+#searchBar {
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.button {
+    padding: 8px;
+    cursor: pointer;
+    width: 100px; /* Set the width of the buttons */
+    border-radius: 10px;
+    background-color: #1a51b1;
+    border: 0px;
+    color: white;
+}
+
+.button:hover {
+    background-color: #f2f2f2;
+    color: #1a51b1;
+}
+.button-container button:first-child {
+    margin-right: 10px; /* Adjust this value to add space between buttons */
+}

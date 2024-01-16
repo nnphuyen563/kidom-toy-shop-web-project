@@ -1,0 +1,30 @@
+<body>
+    <div class="background">
+        <!-- Main Container -->
+        <div class="container d-flex justify-content-center align-items-center min-vh-100">
+            <!-- Login Container -->
+            <div class="row col-md-6 border rounded-4 p-3 bg-white shadow">
+                <!-- right-box -->
+                <div class="col-md-12">
+                    <div class="row align-items-center">
+                        <div class="header-text">
+                            <p> Lấy lại mật khẩu </p>
+                        </div>
+                        <!-- Nhập Email -->
+                        <div class="input-group mb-3">
+                            <small>Mời bạn nhập email đã đăng ký</small>
+                        </div>
+
+                        <form [formGroup]="forgetPasswordForm">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6 mb-3" placeholder="Email" formControlName="email">
+                        </form>
+
+                        <div class="input-group mb-3" id="btnlaylaimk">
+                            <button class="btn btn-lg btn-danger w-100 fs-6" (click)="submit()">Lấy lại mật khẩu</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

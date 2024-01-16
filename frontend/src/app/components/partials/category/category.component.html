@@ -1,0 +1,59 @@
+<div class="container-fluid body p-5">
+    <div class="header-section mb-4">
+        <h2 class="text-center mb-4">Bộ lọc</h2>
+        <div class="d-flex justify-content-center">
+            <button class="btn btn-outline-primary mr-2" (click)="sortByPrice('lowToHigh')">Giá thấp đến cao</button>
+            <button class="ms-2 btn btn-outline-primary" (click)="sortByPrice('highToLow')">Giá cao đến thấp</button>
+        </div>
+    </div>
+    <!-- San pham moi -->
+    <div class="container bg-light p-3 cover">
+        <div class="position-relative">
+            <div class="tieude text-center">
+                <a routerLink="catagory/{CatagoryNew}">
+                    <img src="assets/img/logo/tieude.png" alt
+                        class="thanhtieude m-1">
+                </a>
+            </div>
+            <div
+                class="position-absolute top-50 start-50 translate-middle text-black">
+                <h3 class="texttieude">{{categoryName}}</h3>
+            </div>
+        </div>
+        <!-- san pham moi row1 -->
+        <div class="row">
+            <div class="col-6 col-md-3 mt-3"
+                *ngFor="let product of products; index as i">
+                <a [routerLink]="['/productDetail', product.name]"
+                    [queryParams]="{id: product.id}"
+                    class="text-decoration-none">
+                    <div class="card mb-3">
+                        <img [src]="product.imageHTML" class="card-img" alt
+                            id="hinh{{i + 1}}">
+                        <div class="p-2">
+                            <h5 class="text-black-50 p-2">{{product.category}}</h5>
+                            <h3 class="card-title text-center mt-2">{{product.name}}</h3>
+                            <h3 class="card-text text-center price mb-1">{{product.price}}
+                                VND</h3>
+                            <div class="d-flex align-items-center flex-wrap">
+                                <div
+                                    class="stars mr-auto align-items-center">
+                                    <app-star-rating [stars]="product.star" />
+                                </div>
+                                <div class="mt-2 ml">
+                                    <span class="card-title"> Có sẵn:
+                                        {{product.stock}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <a href="javascript:void(0);" class="cart-btn" (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+
+            </div>
+        </div>
+
+    </div>
+    
+
+</div>

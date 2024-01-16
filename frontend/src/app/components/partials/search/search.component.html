@@ -1,0 +1,9 @@
+
+<div>
+    <input #s type="text" placeholder="Tìm kiếm sản phẩm" 
+    (keyup.enter)="search(s.value)"
+    [value] = "searchTerm"/>
+    <button (click)="search(s.value)">
+        <i class="fa fa-search"></i>
+    </button>
+</div>

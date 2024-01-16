@@ -1,0 +1,28 @@
+<div class="button-container">
+    <input type="text" placeholder="Search..." id="searchBar">
+    <div>
+        <button class="button" onclick="removeProduct()">Remove</button>
+    </div>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tên khách hàng</th>
+            <th>Email</th>
+            <th>Mật khẩu</th>
+            <th>Số điện thoại</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Add your table rows dynamically here -->
+        <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.phone}}</td>
+        </tr>
+    </tbody>
+</table>

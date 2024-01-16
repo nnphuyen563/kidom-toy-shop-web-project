@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: myFontMain;
+    src: url("assets/font/SVN-Billy Bold.ttf");
+}
+@font-face {
+    font-family: myFontSub;
+    src: url("assets/font/SAYURI - Vag Light.ttf");
+}
+
+:root {
+    --bg-color: white;
+    --main-color: #0D5D9C;
+    --sub-color: #407EC9;
+    --button-color-green: #328321;
+    --button-color-red: #e82416;
+}
+
+

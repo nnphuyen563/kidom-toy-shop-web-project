@@ -1,0 +1,139 @@
+.container {
+  font-family: myFontSub;
+  background: #f5f5f5;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.ui-w-80 {
+  width : 80px !important;
+  height: auto;
+}
+
+.new-address {
+  display: none; /* Ẩn khung địa chỉ mới mặc định */
+}
+
+.new-address.show {
+  display: block; /* Hiển thị khung địa chỉ mới khi có lớp 'show' */
+}
+
+label.btn {
+  margin-bottom: 0;
+}
+
+.btn-outline-primary {
+  border-color: #26B4FF;
+  background  : transparent;
+  color       : #26B4FF;
+}
+/*đổi thành pointer khi trỏ chuột vào <a> và button */
+.list-group a, .btn {
+  cursor: pointer;
+}
+/*nút xóa*/
+.media-body .btn {
+  border-radius: 10px;
+}
+/* Màu nền và màu chữ cho input file */
+.media-body.ps-4 label.btn {
+  background-color: #328320; 
+  color: #ffffff; 
+}
+.media-body.ps-4 label.btn:hover{
+  background-color: #086A39;
+}
+/* Ẩn input file để chỉ hiển thị nút */
+.media-body.ps-4 label.btn input {
+  display: none; 
+}
+/* Màu nền cho button */
+.media-body.ps-4 button.btn {
+  background-color: #F52A41; 
+  color: #ffffff; 
+  border: none; 
+}
+/* Hiệu ứng hover cho button */
+.media-body.ps-4 button.btn:hover {
+  background-color: #D32239; 
+}
+.address-tables h5{
+  font-size: 18px;
+}
+.form-group input[type="date"] {
+  height: 40px; /* Điều chỉnh giá trị chiều cao theo mong muốn */
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+}
+
+
+.text-light {
+  color: #717475 !important;
+}
+.add-address {
+  background-color: #328320;
+  color: #fff;
+  border-radius: 10px;
+  height: 40px;
+  margin-right: 10px;
+  border: none;
+}
+
+/*màu của 2 button*/
+.btn-save {
+  background-color: #407EC9;
+  color: #fff;
+  width: 80px;
+}
+.btn-cancel{
+  background-color: #F52A41; 
+  color: #ffffff; 
+  width: 80px;
+}
+
+
+/*chỉnh 2 button căn phải*/
+.text-right {
+  display: flex;
+  justify-content: flex-end;
+}
+/* Khoảng cách giữa hai button */
+.btn-save, .btn-cancel {
+  margin-left: 10px; 
+}
+
+
+
+.account-settings-fileinput {
+  position  : absolute;
+  visibility: hidden;
+  width     : 1px;
+  height    : 1px;
+  opacity   : 0;
+}
+.list-group-item {
+  transition: background-color 0.3s, color 0.3s; /* Hiệu ứng chuyển động */
+}
+
+.list-group-item:hover {
+  background-color: #407EC9; /* Màu nền khi hover */
+  color: #ffffff; /* Màu chữ khi hover */
+}
+
+
+
+
+
+/*menu bên trái*/
+.light-style .account-settings-links .list-group-item {
+  padding     : 0.85rem 1.5rem;
+  border-color: rgba(24, 28, 33, 0.03) !important;
+}
+/* account.component.css */
+.list-group-item.active,
+.list-group-item:hover,
+.list-group-item:active,
+.list-group-item.clicked {
+  background-color: #407ec9; /* Màu xanh */
+  color: #fff !important; /* Màu trắng */
+}

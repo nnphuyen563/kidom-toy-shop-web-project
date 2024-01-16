@@ -1,0 +1,90 @@
+<body>
+  <div class="container-fluid">
+      <div class="row deliveryline">
+
+          <div class="col-3 d-flex align-items-center">
+              <img class="deliveryimg" src="../assets/img/delivery/delivery.png" alt="">  
+              <p class="d-flex deliverytext">Miễn phí cho đơn hàng trên 150k</p>
+          </div>
+          <div class="col-3 d-flex align-items-center">
+              <img class="deliveryimg" src="../assets/img/delivery/delivery.png" alt="">  
+              <p class="d-flex deliverytext">Đặt trước 3 giờ chiều sẽ vận chuyển trong ngày</p>
+          </div>
+          <div class="col-3 d-flex align-items-center">
+              <img class="deliveryimg" src="../assets/img/delivery/delivery.png" alt="">  
+              <p class="d-flex deliverytext">Đặt sau 3 giờ chiều vận chuyển trong ngày sau đó</p>
+          </div>
+          <div class="col-3 d-flex align-items-center">
+              <img class="deliveryimg" src="../assets/img/delivery/delivery.png" alt="">  
+              <p class="d-flex deliverytext">Không giao hàng vào ngày chủ nhật.</p>
+          </div>
+
+      </div>
+  </div>
+  <div class="container mt-3">
+      <div class="row">
+          <div class="col-3">
+              <h4 class="text-center">Thể loại</h4>
+              <hr>
+              <div class="category-filter-container">
+                <div class="category-item" (click)="toggleCategoryDropdown()">
+                  {{ selectedCategory || 'Chọn thể loại' }}
+                  <span *ngIf="selectedCategory" class="remove-filter" (click)="clearCategoryFilter()">x</span>
+                  <div class="dropdown-arrow" [class.rotate]="showCategoryDropdown">&#9660;</div>
+                </div>
+                <ul *ngIf="showCategoryDropdown">
+                  <li *ngFor="let category of categories" (click)="onCategoryChange(category.value)">
+                    {{ category.label }}
+                  </li>
+                </ul>
+              </div>
+              <!-- Thương hiệu -->
+              <h4 class="text-center">Thương hiệu</h4>
+              <hr>
+              <div class="brand-filter-container">
+                <div class="brand-item" (click)="toggleBrandDropdown()">
+                  {{ selectedBrand || 'Chọn thương hiệu' }}
+                  <span *ngIf="selectedBrand" class="remove-filter" (click)="clearBrandFilter()">x</span>
+                  <div class="dropdown-arrow" [class.rotate]="showBrandDropdown">&#9660;</div>
+                </div>
+                <ul *ngIf="showBrandDropdown">
+                  <li *ngFor="let brand of brands" (click)="onBrandChange(brand)">
+                    {{ brand }}
+                  </li>
+                </ul>
+              </div>
+              <!-- Hết -->
+          </div>
+          <div class="col-9">
+              <div class="row align-items-center text-center mb-3">
+                <img class="banner" src="/assets/img/banner/bannerproduct.png" alt="">
+              </div>
+              <div class="row">
+                <div class="col-6 col-md-4" *ngFor="let product of filteredProducts; index as i">
+                  <a [routerLink]="['/productDetail', product.name]" [queryParams]="{id: product.id}" class="text-decoration-none">
+                    <div class="card mb-3">
+                      <img [src]="product.imageHTML" class="card-img" alt id="hinh{{i + 1}}">
+                      <div class="p-2">
+                        <h6 class="text-black-50 p-2">{{product.category}}</h6>
+                        <h5 class="card-title text-center mt-2" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{product.name}}</h5>
+                        <h6 class="card-text text-center price mb-1">{{product.price}} VND</h6>
+                        <div class="d-flex align-items-center flex-wrap">
+                          <div class="stars mr-auto align-items-center linestar">
+                            <app-star-rating [stars]="product.star" />
+                          </div>
+                          <div class="mt-2 ml">
+                            <span class="card-title stock"> Có sẵn: {{product.stock}}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                  <a href="javascript:void(0);" class="cart-btn" (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+                </div>
+              </div>
+            </div>
+
+      </div>
+      
+  </div>
+</body>

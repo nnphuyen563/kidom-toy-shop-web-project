@@ -1,0 +1,145 @@
+<body>
+    <!-- delivery line -->
+    <div class="container-fluid">
+        <div class="row deliveryline">
+
+            <div class="col-3 d-flex align-items-center">
+                <img class="deliveryimg" src="../assets/img/delivery/delivery.png" alt="">  
+                <p class="d-flex deliverytext">Miễn phí cho đơn hàng trên 150k</p>
+            </div>
+            <div class="col-3 d-flex align-items-center">
+                <img class="deliveryimg"
+                    src="../assets/img/delivery/delivery.png" alt>
+                <p class="d-flex deliverytext">Đặt trước 3 giờ chiều sẽ vận
+                    chuyển trong ngày</p>
+            </div>
+            <div class="col-3 d-flex align-items-center">
+                <img class="deliveryimg"
+                    src="../assets/img/delivery/delivery.png" alt>
+                <p class="d-flex deliverytext">Đặt sau 3 giờ chiều vận chuyển
+                    trong ngày sau đó</p>
+            </div>
+            <div class="col-3 d-flex align-items-center">
+                <img class="deliveryimg"
+                    src="../assets/img/delivery/delivery.png" alt>
+                <p class="d-flex deliverytext">Không giao hàng vào ngày chủ
+                    nhật.</p>
+            </div>
+
+        </div>
+    </div>
+    <!-- het delivery line -->
+    <!-- banner -->
+    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/assets/img/banner/Bannerhome.png"
+                    class="d-block w-100" alt="Banner 1">
+            </div>
+            <div class="carousel-item">
+                <img src="/assets/img/banner/Bannerhome2.jpg"
+                    class="d-block w-100" alt="Banner 2">
+            </div>
+            <!-- Thêm các carousel-item khác nếu cần -->
+        </div>
+        <button class="carousel-control-prev" type="button"
+            data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button"
+            data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- hết banner -->
+    <!-- catagory -->
+    <div class="container divcategory">
+        <div class="row p-3">
+            <div class="col-6 col-md-4 col-lg-2 text-center"
+                *ngFor="let catagory of catagorys">
+                <a (click)="navigateToProductList(catagory.name)" class="text-decoration-none">
+                    <img [src]="catagory.imageUrl" alt class="cat">
+                    <div class="card-title text-black">
+                        <h3 class="card-title text-center mt-2 categoryname">{{catagory.name}}</h3>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- het new -->
+    <!-- than trang -->
+    <div class="container-fluid body p-5">
+        <!-- San pham moi -->
+        <div class="container bg-light p-3 cover">
+            <div class="position-relative">
+                <div class="tieude text-center">
+                        <img src="assets/img/logo/tieude.png" alt
+                            class="thanhtieude m-1">
+                </div>
+                <div
+                    class="position-absolute top-50 start-50 translate-middle text-black">
+                    <h1 class="texttieude">Sản phẩm mới</h1>
+                </div>
+            </div>
+            <!-- san pham moi row1 -->
+            <div class="row">
+                <div class="col-6 col-md-3 "
+                    *ngFor="let product of products; index as i">
+                    <a routerLink="productDetail/{{product.name}}"
+                        [queryParams]="{id: product.id}"
+                        class="text-decoration-none">
+                        <div class="card mb-3">
+                            <img [src]="product.imageHTML" class="card-img" alt
+                                id="hinh{{i + 1}}">
+                            <div class="p-2">
+                                <h5 class="text-black-50 p-2">{{product.category}}</h5>
+                                <h3 class="card-title text-center mt-2 prdname" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">{{product.name}}</h3>
+                                <h3 class="card-text text-center price mb-1">{{product.price}} VND</h3>
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <div
+                                        class="stars mr-auto align-items-center linestar">
+                                        <app-star-rating [stars]="product.star" />
+                                    </div>
+                                    <div class="mt-2 ml">
+                                        <span class="card-title stock"> Có sẵn:
+                                            {{product.stock}}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </a>
+                    <a href="javascript:void(0);" class="cart-btn" (click)="addToCart(product)"><i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng</a>
+
+                </div>
+            </div>
+
+        </div>
+        <div class="cointainer">
+            <div class="position-relative mt-5">
+                <div class="text-center">
+                    <img src="../assets/img/logo/tieude.png" alt
+                        class="thanhtieude m-1">
+                </div>
+                <div
+                    class="position-absolute top-50 start-50 translate-middle text-black">
+                    <h1 class="texttieude">Thông tin mới nhất</h1>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-xl-4 text-center mb-3"
+                    *ngFor="let banner of banners" (click)="navigateToBanner(banner)">
+                    <img [src]="banner.imageUrl" alt class="blog">
+                </div>
+            </div>
+        </div>
+        <!-- ảnh cuối trang -->
+        <!-- <div class="container-fluid"> 
+            <img src="assets/img/logo/christmas-hp-footer-desktop.jpg" alt="" class="w-100 mb-0">
+        </div> -->
+
+    </div>
+</body>
